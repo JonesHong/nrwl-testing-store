@@ -62,3 +62,12 @@ import 'zone.js'; // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+import "reflect-metadata";
+//  resolve.fallback: { "http": require.resolve("stream-http") }
+//  resolve.fallback: { "http": false }
+
+(window as any).process = {
+    env: { DEBUG: undefined },
+};
+import * as process from 'process';
+window['process'] = process;

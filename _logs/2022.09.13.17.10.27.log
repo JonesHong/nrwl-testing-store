@@ -1,0 +1,16 @@
+Log file open, 2022/09/13 17:10:27
+[Nrwl] 57652 - 2022/09/13 17:10:27  [Dev] 124
+[Nrwl] 57652 - 2022/09/13 17:10:27  [Dev] 5678
+[Nrwl] 57652 - 2022/09/13 17:10:27  [Dev] 999999
+[Nrwl] 57652 - 2022/09/13 17:10:27  [forRootEffects] forRootEffects is loaded successfully in 0 times.
+[Nrwl] 57652 - 2022/09/13 17:10:27  [forRootEffects] forRootEffects loaded successfully. +122ms
+[Nrwl] 57652 - 2022/09/13 17:10:27  [GroupReducer] DefaultActionState finished. +1ms
+[Nrwl] 57652 - 2022/09/13 17:10:28  [GroupReducer] DefaultActionState finished. +5ms
+[Nrwl] 57652 - 2022/09/13 17:10:33  [Broker] This event didn't have a Subject.Please check Action config:
+{"_actionId":"action-7e421be3-e40c-4594-9648-dcccdf1ab008","_createDateTime":1663060233651,"_updateDateTime":1663060233651,"_parentId":null,"_sourceId":null,"_targetIds":[],"_traversal":{},"type":"[Group] Testing Group API"}
+[Nrwl] 57652 - 2022/09/13 17:10:33  [DefaultActionState] defaultActionState() doesn't handle this action: [Group] Testing Group API Success.
+Make sure it has been handle in GroupReducer.mapEventToState() or Effect.
+[Nrwl] 57652 - 2022/09/13 17:10:33  [DefaultActionState] There is no change after action([Group] Testing Group API Success):
+{"_actionId":"action-a62a722d-2472-429c-9c3c-d527dfb992b6","_createDateTime":1663060233653,"_updateDateTime":1663060233654,"_parentId":null,"_sourceId":null,"_targetIds":[],"_traversal":{},"payload":{"body":[1,2,3,4]},"type":"[Group] Testing Group API Success"}
+[Nrwl] 57652 - 2022/09/13 17:10:33  [GroupReducer] DefaultActionState finished. +3ms
+[Nrwl] 57652 - 2022/09/13 17:10:33  [GroupReducer] apiBody: 1,2,3,4

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Message } from '@testing-mycena-store/api-interfaces';
+import { Observable } from "rxjs";
+import { Store } from "../../../../libs/mycena-store/src/lib/mycena-store.unittest";
 
 @Component({
   selector: 'testing-mycena-store-root',
@@ -9,5 +11,9 @@ import { Message } from '@testing-mycena-store/api-interfaces';
 })
 export class AppComponent {
   hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+
+    console.log(Store)
+  }
+
 }
