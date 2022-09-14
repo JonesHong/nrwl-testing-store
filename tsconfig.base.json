@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "rootDir": "../.",
+    "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
@@ -28,25 +28,13 @@
     ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": "../.",
+    "baseUrl": ".",
     "paths": {
-      "fs": [
-        "testing-store/node_modules/file-system"
-      ],
       "@testing-store/api-interfaces": [
-        "testing-store/libs/api-interfaces/src/index.ts"
+        "libs/api-interfaces/src/index.ts"
       ],
       "@testing-store/mycena-store": [
-        "testing-store/libs/mycena-store/src/index.ts"
-      ],
-      "@mycena/store": [
-        "store/src/index.ts"
-      ],
-      "@felangel/bloc": [
-        "store/src/lib/@felangel/bloc/bloc.ts"
-      ],
-      "@mycena/store/*": [
-        "store/src/*"
+        "libs/mycena-store/src/index.ts"
       ]
     }
   },

@@ -1,10 +1,10 @@
-import { EntityState, EntityAdapter, createEntityAdapter } from "@mycena/store/common/adapter";
-import { Reducer } from "@mycena/store/common/reducer";
-import { Action } from "@mycena/store/common/action";
+import { EntityState, EntityAdapter, createEntityAdapter } from "mycena-store";
+import { Reducer } from "mycena-store";
+import { Action } from "mycena-store";
 import { ActionMap } from "./group.actions";
 import { GroupEntity } from "./group.entity";
 import { Group } from "./group.models";
-import { Logger } from "@mycena/store/common/logger";
+import { Logger } from "mycena-store";
 
 export const FeatureKey = 'group';
 

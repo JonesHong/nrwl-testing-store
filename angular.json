@@ -107,11 +107,7 @@
             ],
             "scripts": [],
             "allowedCommonJsDependencies": [
-              "fs",
-              "file-system",
-              "chalk",
-              "path",
-              "supertest"
+              "mycena-store"
             ]
           },
           "configurations": {

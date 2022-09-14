@@ -1,10 +1,10 @@
-import { AddMany, AddOne, CqrsMain } from '@mycena/store';
-import { RelationshipByType } from '@mycena/store/common/interface/relation.interface';
+import { AddMany, AddOne, CqrsMain } from 'mycena-store';
+import { RelationshipByType } from 'mycena-store';
 import * as fromGroup from './group/group.reducer';
 import { GroupEffects } from './group/group.effects';
 import { TestGroupAPI } from './group/group.actions';
 import { GroupService } from './group/group.service';
-import { Logger } from '@mycena/store/common/logger';
+import { Logger } from 'mycena-store';
 
 export interface StoreState {
   group: fromGroup.GroupState;

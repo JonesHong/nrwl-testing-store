@@ -1,4 +1,4 @@
-import { Entity } from "@mycena/store/entity";
+import { Entity } from "mycena-store";
 
 export class StudentEntity extends Entity {
     _name: string = "StudentEntity";
