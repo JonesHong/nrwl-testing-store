@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Message } from '@testing-mycena-store/api-interfaces';
+import { Message } from '@testing-store/api-interfaces';
 
 import { Store } from "../../../../libs/mycena-store/src/lib/mycena-store.unittest"
 

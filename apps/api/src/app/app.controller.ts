@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 
-import { Message } from '@testing-mycena-store/api-interfaces';
+import { Message } from '@testing-store/api-interfaces';
 
 import { AppService } from './app.service';
 

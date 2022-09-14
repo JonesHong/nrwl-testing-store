@@ -31,22 +31,22 @@
     "baseUrl": "../.",
     "paths": {
       "fs": [
-        "testing-mycena-store/node_modules/file-system"
+        "testing-store/node_modules/file-system"
       ],
-      "@testing-mycena-store/api-interfaces": [
-        "testing-mycena-store/libs/api-interfaces/src/index.ts"
+      "@testing-store/api-interfaces": [
+        "testing-store/libs/api-interfaces/src/index.ts"
       ],
-      "@testing-mycena-store/mycena-store": [
-        "testing-mycena-store/libs/mycena-store/src/index.ts"
+      "@testing-store/mycena-store": [
+        "testing-store/libs/mycena-store/src/index.ts"
       ],
       "@mycena/store": [
-        "mycena-store-master/src/index.ts"
+        "store/src/index.ts"
       ],
       "@felangel/bloc": [
-        "mycena-store-master/src/lib/@felangel/bloc/bloc.ts"
+        "store/src/lib/@felangel/bloc/bloc.ts"
       ],
       "@mycena/store/*": [
-        "mycena-store-master/src/*"
+        "store/src/*"
       ]
     }
   },

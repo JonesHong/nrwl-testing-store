@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Message } from '@testing-mycena-store/api-interfaces';
+import { Message } from '@testing-store/api-interfaces';
 import { Observable } from "rxjs";
 import { Store } from "../../../../libs/mycena-store/src/lib/mycena-store.unittest";
 
