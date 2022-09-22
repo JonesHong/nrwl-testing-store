@@ -30,20 +30,18 @@
     "skipDefaultLibCheck": true,
     "baseUrl": "../.",
     "paths": {
-      "fs": [
-        "testing-store/node_modules/file-system"
-      ],
       "@testing-store/api-interfaces": [
-        "testing-store/libs/api-interfaces/src/index.ts"
+        "nrwl-testing-store/libs/api-interfaces/src/index.ts"
       ],
       "@testing-store/mycena-store": [
-        "testing-store/libs/mycena-store/src/index.ts"
+        "nrwl-testing-store/libs/mycena-store/src/index.ts"
       ],
       "@mycena/store": [
         "store/src/index.ts"
       ],
       "@felangel/bloc": [
-        "store/src/lib/@felangel/bloc/bloc.ts"
+        // "store/src/lib/@felangel/bloc/bloc.ts"
+        "store/src/libs/@felangel/bloc/bloc.ts"
       ],
       "@mycena/store/*": [
         "store/src/*"

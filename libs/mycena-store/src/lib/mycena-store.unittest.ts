@@ -1,26 +1,37 @@
-import { AddMany, AddOne, CqrsMain } from '@mycena/store';
+import { AddMany, AddOne, CqrsMain, Relation, RemoveMany, SetMany } from '@mycena/store';
 import { RelationshipByType } from '@mycena/store/common/interface/relation.interface';
 import * as fromGroup from './group/group.reducer';
+import * as fromEmployee from './employee/employee.reducer'
 import { GroupEffects } from './group/group.effects';
 import { TestGroupAPI } from './group/group.actions';
 import { GroupService } from './group/group.service';
 import { Logger } from '@mycena/store/common/logger';
+import { BehaviorSubject } from 'rxjs';
 
 export interface StoreState {
   group: fromGroup.GroupState;
+  employee: fromEmployee.EmployeeState
 }
 export const Reducers = {
   group: fromGroup.reducer,
+  employee: fromEmployee.reducer
 };
 export const FeatureKeys = {
   group: fromGroup.FeatureKey,
+  employee: fromEmployee.FeatureKey
 };
 export const Effects = [GroupEffects];
 
 export const RelationshipByTypeMap: RelationshipByType = {
   OneToOne: new Set([]),
-  OneToMany: new Set([]),
-  ManyToOne: new Set([]),
+  OneToMany: new Set([
+    "Group{employeeMap(group)} to Employee{group(id)}",
+    "Group{testEmployeeMap(testGroup)} to Employee{groupTest(id)}",
+  ]),
+  ManyToOne: new Set([
+    "Employee{group(id)} to Group{EmployeeMap(group)}",
+    "Employee{groupTest(id)} to Group{testEmployeeMap(testGroup)}"
+  ]),
   ManyToMany: new Set(['Group{cooperationId} to Group{group(id)}']),
 };
 export const Cqrs = new CqrsMain<StoreState, typeof Reducers>();
@@ -32,6 +43,8 @@ export const StoreSate: any = Cqrs.StoreSate;
 export const Actions: any = Cqrs.Actions;
 Cqrs.forRootEffects(Effects);
 Cqrs.setRelationshipByType(RelationshipByTypeMap);
+Cqrs.setRelationConfig(Relation.getInstance().fromJDL(Cqrs.relationshipByType));
+export const StoreWithRelation: BehaviorSubject<StoreState> = Cqrs.StoreWithRelation;
 
 Store.dispatch(new AddOne('group', { id: 'g-1', name: 'Mycena' }));
 Store.dispatch(
@@ -43,11 +56,15 @@ Store.dispatch(
 
 setTimeout(() => {
   console.log(33333890280);
+  Store.dispatch(new AddMany('employee', [{ id: 'e-1', name: 'Eric' }]));
+  Store.dispatch(new SetMany('employee', [{ id: 'e-1', name: 'Eric', group: {id: 'g-1', name: 'Mycena'}, testGroup: {id: 'g-2', name: 'Tymetro'} }]));
+  // Store.dispatch(new SetMany('employee', [{ id: 'e-1', name: 'Eric', group: {id: 'g-2', name: 'Tymetro'} }]));
+  // Store.dispatch(new RemoveMany('group', ['g-1']))
+
   Store.dispatch(new TestGroupAPI());
   Logger.log('Dev', '222 Store.topicMap', { payload: Store.topicMap });
   Logger.log('Dev', '222 Store.topicNameList', { payload: Store.topicNameList });
 }, 6000);
-
 Logger.log('Dev', '111 Store.topicMap', { payload: Store.topicMap });
 Logger.log('Dev', '111 Store.topicNameList', { payload: Store.topicNameList });
 // "OneToOne": new Set([
